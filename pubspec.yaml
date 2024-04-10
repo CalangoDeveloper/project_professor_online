@@ -58,7 +58,7 @@ flutter:
   # the material Icons class.
   uses-material-design: true
   assets: 
-  - imgs\Professora escrevendo na lousa.jpg
+  - C:\Users\TI\project_professor_online\imgs\Professora escrevendo na lousa.jpg
 
   # To add assets to your application, add an assets section, like this:
   # assets:

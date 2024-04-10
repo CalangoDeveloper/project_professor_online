@@ -40,7 +40,7 @@ class TelaLogin extends StatelessWidget{
             ElevatedButton(
               style: ElevatedButton.styleFrom(
                 backgroundColor: Color(0xFF208C78),
-                minimumSize: Size(double.infinity, 55),
+                //minimumSize: Size(double.infinity, 55),
                 padding: EdgeInsets.zero,
               ),
               child: const Text('Login',
@@ -111,7 +111,7 @@ class TelaIncial extends StatelessWidget{
       body: Container(
         child: Column(
           children: [
-            Image.asset('imgs\Professora escrevendo na lousa.jpg'),
+            Image.asset('C:\Users\TI\project_professor_online\imgs\Professora escrevendo na lousa.jpg'),
           ],
         ),
       ),
