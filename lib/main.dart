@@ -1,5 +1,3 @@
-import 'dart:ffi';
-
 import 'package:flutter/material.dart';
 
 void main(){
@@ -40,7 +38,7 @@ class TelaLogin extends StatelessWidget{
             ElevatedButton(
               style: ElevatedButton.styleFrom(
                 backgroundColor: Color(0xFF208C78),
-                //minimumSize: Size(double.infinity, 55),
+                minimumSize: Size(double.infinity, 55),
                 padding: EdgeInsets.zero,
               ),
               child: const Text('Login',
