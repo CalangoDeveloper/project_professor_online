@@ -1,3 +1,5 @@
+import 'dart:ffi';
+
 import 'package:flutter/material.dart';
 
 void main(){
@@ -107,7 +109,11 @@ class TelaIncial extends StatelessWidget{
         ],
       ),
       body: Container(
-
+        child: Column(
+          children: [
+            Image.asset('imgs\Professora escrevendo na lousa.jpg'),
+          ],
+        ),
       ),
 
       drawer: Drawer(
@@ -125,7 +131,6 @@ class TelaIncial extends StatelessWidget{
                   ),
                 ),
               ),
-             
               ListTile(
                 leading: Icon(Icons.map),
                 title: Text('Mapas'),
