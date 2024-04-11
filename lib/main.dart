@@ -192,7 +192,6 @@ class TelaIncial extends StatelessWidget{
                 fontWeight: FontWeight.w400
               ),),
             ),
-
             SizedBox(height: 20,),
             Icon(Icons.inbox_sharp,
               size: 120,
@@ -207,18 +206,38 @@ class TelaIncial extends StatelessWidget{
       ),
 
       drawer: Drawer(
-          width: 300,
+          width: 350,
           child: ListView(
             padding: EdgeInsets.zero,
             children: <Widget>[
               SizedBox(
-                height: 100,
+                height: 200,
                 child: DrawerHeader(
+                  decoration: BoxDecoration(
+                    color: Color(0xFF208C78)
+                  ),
                   child: Container(
-                    alignment: Alignment.bottomCenter,
-                    child: Text('O portal do professor da rede estadual', style: TextStyle(
-                      fontSize: 14,
-                    ),),
+                    alignment: Alignment.centerLeft,
+                    child: Row(
+                      children: [
+                        Expanded(
+                          child: Icon(Icons.person, size: 40, color: Colors.white,),
+                        ),
+                        SizedBox(
+                          width: 20,
+
+                          child: DrawerHeader(
+                            child: Container(
+                              child: Text('O portal do professor da rede estadual',
+                              style: TextStyle(
+                                color: Colors.white,
+                                fontSize: 14
+                              ),),
+                            ),
+                          ),
+                        )
+                      ],
+                    ),
                   )
                 ),
               ),
