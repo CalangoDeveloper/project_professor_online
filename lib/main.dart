@@ -19,25 +19,48 @@ class TelaLogin extends StatelessWidget{
       appBar: AppBar(
         title: Text('Professor Online - Login'),
         titleTextStyle: TextStyle(color: Colors.white, fontSize: 24),
-        backgroundColor: Color(0xFF208C78),
+        backgroundColor: Color(0xFF307367),
         toolbarHeight: 70,
       ),
       
       body: Container(
         decoration: BoxDecoration(
-          color: Color(0xF307367)
+          color: Color.fromARGB(255, 117, 179, 167)
         ),
         padding: EdgeInsets.all(40),
         child: Column(
           children: [
-            SizedBox(height: 60,),
+            SizedBox(height: 25,),
+            RichText(
+              text: TextSpan(
+                children: [
+                  TextSpan(
+                    text: 'Professor',
+                    style: TextStyle(
+                      color: Colors.white,
+                      fontSize: 28,
+                      fontWeight: FontWeight.bold
+                    ),
+                  ),
+                  TextSpan(
+                    text: ' Online',
+                    style: TextStyle(
+                      color: Color.fromARGB(255, 242, 140, 7),
+                      fontSize: 28,
+                      fontWeight: FontWeight.bold
+                    ),
+                  ),
+                ]
+              ),
+            ),
+            SizedBox(height: 50,),
             widgetTextField_Cpf(),
             SizedBox(height: 20),
             widgetTextField_Senha(),
             SizedBox(height: 30,),
             ElevatedButton(
               style: ElevatedButton.styleFrom(
-                backgroundColor: Color(0xFF208C78),
+                backgroundColor: Color(0xFF307367),
                 minimumSize: Size(double.infinity, 55),
                 padding: EdgeInsets.zero,
               ),
@@ -51,6 +74,24 @@ class TelaLogin extends StatelessWidget{
                 MaterialPageRoute(builder: (context) => const TelaIncial()),);
               },
             ),
+            SizedBox(height: 10,),
+            Row(
+              children: [
+                Expanded(
+                  child: Text('Primeiro acesso', style: TextStyle(
+                    fontSize: 18,
+                    color: Colors.white 
+            ),),
+                ),
+                SizedBox(width: 60,),
+                Expanded(
+                  child: Text('Recuperar senha', style: TextStyle(
+                  fontSize: 18,
+                  color: Colors.white
+            ),),
+                ),
+              ],
+            ),
           ],
         ),
       ),
@@ -63,9 +104,11 @@ widgetTextField_Cpf(){
   return TextField(
     decoration: InputDecoration(
       icon: Icon(Icons.person),
+      iconColor: Colors.white,
       hintText: 'CPF...',
       hintStyle: TextStyle(
-        fontSize: 18
+        fontSize: 18,
+        color: Colors.white
       )
     ),
   );
@@ -76,9 +119,11 @@ widgetTextField_Senha(){
   return TextField(
     decoration: InputDecoration(
       icon: Icon(Icons.lock),
+      iconColor: Colors.white,
       hintText: 'Senha...',
       hintStyle: TextStyle(
-        fontSize: 18
+        fontSize: 18,
+        color: Colors.white
       )
     ),
   );
@@ -107,9 +152,18 @@ class TelaIncial extends StatelessWidget{
         ],
       ),
       body: Container(
+        padding: EdgeInsets.all(40),
         child: Column(
           children: [
-            Image.asset('C:\Users\TI\project_professor_online\imgs\Professora escrevendo na lousa.jpg'),
+            SizedBox(height: 20,),
+            Text('Professor Online SEDUC', style: TextStyle(
+              fontSize: 18,
+              fontWeight: FontWeight.bold
+            ),),
+            Text('O portal do professor da rede estadual', style: TextStyle(
+              fontSize: 16, 
+              fontWeight: FontWeight.w400
+            ),)
           ],
         ),
       ),
@@ -131,7 +185,7 @@ class TelaIncial extends StatelessWidget{
               ),
               ListTile(
                 leading: Icon(Icons.map),
-                title: Text('Mapas'),
+                title: Text(''),
                 textColor: Colors.black,
               ),
               ListTile(
