@@ -31,6 +31,7 @@ class TelaLogin extends StatelessWidget{
         child: Column(
           children: [
             SizedBox(height: 25,),
+            //Texto "Professor Online"
             RichText(
               text: TextSpan(
                 children: [
@@ -53,11 +54,14 @@ class TelaLogin extends StatelessWidget{
                 ]
               ),
             ),
+            //TextField
+            //SizedBox: espaçamento entre os elementos
             SizedBox(height: 50,),
             widgetTextField_Cpf(),
             SizedBox(height: 20),
             widgetTextField_Senha(),
             SizedBox(height: 30,),
+            //Botão login
             ElevatedButton(
               style: ElevatedButton.styleFrom(
                 backgroundColor: Color(0xFF307367),
@@ -79,14 +83,14 @@ class TelaLogin extends StatelessWidget{
               children: [
                 Expanded(
                   child: Text('Primeiro acesso', style: TextStyle(
-                    fontSize: 18,
+                    fontSize: 16,
                     color: Colors.white 
             ),),
                 ),
                 SizedBox(width: 60,),
                 Expanded(
                   child: Text('Recuperar senha', style: TextStyle(
-                  fontSize: 18,
+                  fontSize: 16,
                   color: Colors.white
             ),),
                 ),
@@ -220,19 +224,23 @@ class TelaIncial extends StatelessWidget{
                     alignment: Alignment.centerLeft,
                     child: Row(
                       children: [
-                        Expanded(
-                          child: Icon(Icons.person, size: 40, color: Colors.white,),
-                        ),
+                        
                         SizedBox(
-                          width: 20,
-
+                          width: 200,
                           child: DrawerHeader(
                             child: Container(
-                              child: Text('O portal do professor da rede estadual',
-                              style: TextStyle(
-                                color: Colors.white,
-                                fontSize: 14
-                              ),),
+                              child: Column(
+                                children: [
+                                  Icon(Icons.person, size: 40, color: Colors.white,),
+                                  SizedBox(height: 8,),
+                                  Text('O portal do professor da rede estadual',
+                                    style: TextStyle(
+                                      color: Colors.white,
+                                      fontSize: 14
+                                    ),
+                                  )
+                                ],
+                              ),
                             ),
                           ),
                         )
