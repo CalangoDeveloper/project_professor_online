@@ -151,34 +151,73 @@ class TelaIncial extends StatelessWidget{
           )
         ],
       ),
+      //Container principal
       body: Container(
-        padding: EdgeInsets.all(40),
         child: Column(
           children: [
+            //Primeiro container
+            Container(
+              width: MediaQuery.of(context).size.width,
+              padding: EdgeInsets.only(bottom: 10),
+              decoration: BoxDecoration(
+                color: Color(0xFFC4F2EA)
+              ),
+              child: Column(
+                children: [
+                  SizedBox(height: 20,),
+                  Text('Professor Online SEDUC', style: TextStyle(
+                    color: Color.fromARGB(255, 73, 73, 73),
+                    fontSize: 18,
+                    fontWeight: FontWeight.bold
+                  ),),
+                  Text('O portal do professor da rede estadual', style: TextStyle(
+                    color: Color.fromARGB(255, 73, 73, 73),
+                    fontSize: 16, 
+                    fontWeight: FontWeight.w400
+                  ),),
+                ],
+              ),
+            ),
+            //Segundo container
+            Container(
+              width: MediaQuery.of(context).size.width,
+              height: 35,
+              decoration: BoxDecoration(
+                color: Color(0xFF208C78)
+              ),
+              alignment: Alignment.center,
+              child: Text('Bem vindo, Professor!', style: TextStyle(
+                color: Colors.white,
+                fontSize: 16,
+                fontWeight: FontWeight.w400
+              ),),
+            ),
+
             SizedBox(height: 20,),
-            Text('Professor Online SEDUC', style: TextStyle(
-              fontSize: 18,
-              fontWeight: FontWeight.bold
-            ),),
-            Text('O portal do professor da rede estadual', style: TextStyle(
-              fontSize: 16, 
-              fontWeight: FontWeight.w400
+            Icon(Icons.inbox_sharp,
+              size: 120,
+              color: Color.fromARGB(255, 73, 73, 73)
+            ),
+            Text('Nenhum item encontrado!', style: TextStyle(
+              color: Color.fromARGB(255, 73, 73, 73),
+              fontSize: 18
             ),)
           ],
         ),
       ),
 
       drawer: Drawer(
-          width: 220,
+          width: 300,
           child: ListView(
             padding: EdgeInsets.zero,
             children: <Widget>[
               SizedBox(
                 height: 100,
                 child: DrawerHeader(
-                  child: Text('Menu',
-                    style: TextStyle(
-                      fontSize: 22,
+                  child: 
+                  
+                  Text('O portal do professor da rede estadual', style: TextStyle(
+                      fontSize: 14,
                     ),
                   ),
                 ),
