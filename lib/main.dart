@@ -214,12 +214,12 @@ class TelaIncial extends StatelessWidget{
               SizedBox(
                 height: 100,
                 child: DrawerHeader(
-                  child: 
-                  
-                  Text('O portal do professor da rede estadual', style: TextStyle(
+                  child: Container(
+                    alignment: Alignment.bottomCenter,
+                    child: Text('O portal do professor da rede estadual', style: TextStyle(
                       fontSize: 14,
-                    ),
-                  ),
+                    ),),
+                  )
                 ),
               ),
               ListTile(
