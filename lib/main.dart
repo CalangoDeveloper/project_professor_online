@@ -33,32 +33,9 @@ class TelaLogin extends StatelessWidget{
         child: Column(
           children: [
             SizedBox(height: 25,),
-            Image.asset('imgs/logo.png',
+            Image.asset('imgs/logo.png', //Logo Professor Online
               width: 250,
             ),
-            /*/Texto "Professor Online" - Logo
-            RichText(
-              text: TextSpan(
-                children: [
-                  TextSpan(
-                    text: 'Professor',
-                    style: TextStyle(
-                      color: Colors.white,
-                      fontSize: 28,
-                      fontWeight: FontWeight.bold
-                    ),
-                  ),
-                  TextSpan(
-                    text: ' Online',
-                    style: TextStyle(
-                      color: Color.fromARGB(255, 242, 140, 7),
-                      fontSize: 28,
-                      fontWeight: FontWeight.bold
-                    ),
-                  ),
-                ]
-              ),
-            ),*/
 
             //TextField (cpf e senha)
             //SizedBox: espaçamento entre os elementos
@@ -67,8 +44,8 @@ class TelaLogin extends StatelessWidget{
             SizedBox(height: 20),
             widgetTextField_Senha(),
             SizedBox(height: 30,),
-            //Botão login (ao pressionado irá para outra rota (tela))
 
+            //Botão login (ao pressionado irá para outra rota (tela))
             ElevatedButton(
               style: ElevatedButton.styleFrom(
                 backgroundColor: Color(0xFF307367),
@@ -86,8 +63,8 @@ class TelaLogin extends StatelessWidget{
               },
             ),
             SizedBox(height: 10,),
-            //"Botões" para primeiro acesso e recuperar senha
 
+            //"Botões" para primeiro acesso e recuperar senha
             Row(
               children: [
                 Expanded(
@@ -117,11 +94,21 @@ class TelaLogin extends StatelessWidget{
 widgetTextField_Cpf(){
   return TextField(
     decoration: InputDecoration(
-      icon: Icon(Icons.person),
-      iconColor: Colors.white,
-      hintText: 'CPF...',
-      hintStyle: TextStyle(
+      focusedBorder: UnderlineInputBorder( //Estilização da linha do input quando estiver focada
+        borderSide: BorderSide(
+          color: Color(0xFF307367), //Cor da linha quando estiver em foco
+        ),
+      ),
+      enabledBorder: UnderlineInputBorder( //Estilização da linha do input quando estiver sem foco
+        borderSide: BorderSide(
+          color: Color(0xFF307367) //Cor da linha quando estiver sem foco
+        )
+      ),
+      prefixIcon: Icon(Icons.person, color: Colors.white,), //Ícone
+      hintText: 'CPF', //Texto
+      hintStyle: TextStyle( //Estilização do texto
         fontSize: 18,
+        fontWeight: FontWeight.w400,
         color: Colors.white
       )
     ),
@@ -131,12 +118,23 @@ widgetTextField_Cpf(){
 //TextField Senha - Tela de Login
 widgetTextField_Senha(){
   return TextField(
-    decoration: InputDecoration(
-      icon: Icon(Icons.lock),
-      iconColor: Colors.white,
-      hintText: 'Senha...',
-      hintStyle: TextStyle(
+    decoration: InputDecoration( 
+      focusedBorder: UnderlineInputBorder( //Estilização da linha do input quando estiver focada
+        borderSide: BorderSide(
+          color: Color(0xFF307367), //Cor da linha quando estiver em foco
+        ),
+      ),
+      enabledBorder: UnderlineInputBorder( //Estilização da linha quando estiver sem foco
+        borderSide: BorderSide(
+          color: Color(0xFF307367) //Cor da linha quando estiver sem foco
+        )
+      ),
+      prefixIcon: Icon(Icons.lock, color: Colors.white,), //Ícone da esquerda
+      suffixIcon: Icon(Icons.remove_red_eye, color: Color(0xFF307367),), //ícone da direita
+      hintText: 'Senha', //Texto
+      hintStyle: TextStyle( //Estilização do texto
         fontSize: 18,
+        fontWeight: FontWeight.w400,
         color: Colors.white
       )
     ),
