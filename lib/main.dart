@@ -17,6 +17,7 @@ class TelaLogin extends StatelessWidget{
   @override
   Widget build(BuildContext context){
     return Scaffold(
+
       appBar: AppBar(
         title: Text('Professor Online - Login'),
         titleTextStyle: TextStyle(color: Colors.white, fontSize: 24),
@@ -26,13 +27,13 @@ class TelaLogin extends StatelessWidget{
       
       body: Container(
         decoration: BoxDecoration(
-          color: Color.fromARGB(255, 117, 179, 167)
+          color: Color.fromARGB(255, 117, 179, 167) //Background da tela
         ),
         padding: EdgeInsets.all(40),
         child: Column(
           children: [
             SizedBox(height: 25,),
-            //Texto "Professor Online"
+            //Texto "Professor Online" - Logo
             RichText(
               text: TextSpan(
                 children: [
@@ -55,14 +56,16 @@ class TelaLogin extends StatelessWidget{
                 ]
               ),
             ),
-            //TextField
+
+            //TextField (cpf e senha)
             //SizedBox: espaçamento entre os elementos
             SizedBox(height: 50,),
             widgetTextField_Cpf(),
             SizedBox(height: 20),
             widgetTextField_Senha(),
             SizedBox(height: 30,),
-            //Botão login
+            //Botão login (ao pressionado irá para outra rota (tela))
+
             ElevatedButton(
               style: ElevatedButton.styleFrom(
                 backgroundColor: Color(0xFF307367),
@@ -80,6 +83,8 @@ class TelaLogin extends StatelessWidget{
               },
             ),
             SizedBox(height: 10,),
+            //"Botões" para primeiro acesso e recuperar senha
+
             Row(
               children: [
                 Expanded(
@@ -134,42 +139,46 @@ widgetTextField_Senha(){
     ),
   );
 }
+
  //Tela Incial
 class TelaIncial extends StatelessWidget{
   const TelaIncial({super.key});
   @override
   Widget build(BuildContext context){
     return Scaffold(
-      appBar: AppBar(
+
+      appBar: AppBar( //Cabeçalho
         title: const Text('Professor Online'),
         titleTextStyle: TextStyle(color: Colors.white, fontSize: 24),
         backgroundColor: Color(0xFF208C78),
         toolbarHeight: 70,
-        foregroundColor: Colors.white,
+        foregroundColor: Colors.white, //Alterar a cor ícone menu do drawer
         actions: <Widget>[
-          IconButton(
+          IconButton( //Ícone de recarregar (canto superior direito da tela)
             padding: EdgeInsets.only(right: 20.0),
             icon: Icon(
               Icons.refresh,
               color: Colors.white,
             ),
-            onPressed: null,
+            onPressed: null, //Deixar o botão sem "função"
           )
         ],
       ),
+
       //Container principal
       body: Container(
         child: Column(
           children: [
+
             //Primeiro container
             Container(
-              width: MediaQuery.of(context).size.width,
+              width: MediaQuery.of(context).size.width, //Define que o container tem que pegar toda a largura da tela
               padding: EdgeInsets.only(bottom: 10),
               decoration: BoxDecoration(
-                color: Color(0xFFC4F2EA)
+                color: Color(0xFFC4F2EA) //Background do container
               ),
               child: Column(
-                children: [
+                children: [ //Textos contidos no container
                   SizedBox(height: 20,),
                   Text('Professor Online SEDUC', style: TextStyle(
                     color: Color.fromARGB(255, 73, 73, 73),
@@ -184,26 +193,27 @@ class TelaIncial extends StatelessWidget{
                 ],
               ),
             ),
+
             //Segundo container
             Container(
-              width: MediaQuery.of(context).size.width,
-              height: 35,
+              width: MediaQuery.of(context).size.width, //Define que o container tem que pegar toda a largura da tela
+              height: 35, //Tamanho do container
               decoration: BoxDecoration(
                 color: Color(0xFF208C78)
               ),
-              alignment: Alignment.center,
-              child: Text('Bem vindo, Professor!', style: TextStyle(
+              alignment: Alignment.center, //Alinhar os elementos ao centro
+              child: Text('Bem vindo, Professor!', style: TextStyle( //Texto contido no segundo container
                 color: Colors.white,
                 fontSize: 16,
                 fontWeight: FontWeight.w400
               ),),
             ),
             SizedBox(height: 20,),
-            Icon(Icons.inbox_sharp,
+            Icon(Icons.inbox_sharp, //Ícon do container principal (inbox)
               size: 120,
               color: Color.fromARGB(255, 73, 73, 73)
             ),
-            Text('Nenhum item encontrado!', style: TextStyle(
+            Text('Nenhum item encontrado!', style: TextStyle( //Texto contido no container principal
               color: Color.fromARGB(255, 73, 73, 73),
               fontSize: 18
             ),)
@@ -253,7 +263,7 @@ class TelaIncial extends StatelessWidget{
                   ),
                 ),
               ),
-              //Ícones
+              //Abas
               ListTile( //Dados pessoais
                 leading: Icon(Icons.person_sharp, size: 30,color: Color(0xFF208C78),),
                 title: Text('Dados pessoais',
@@ -344,7 +354,8 @@ class TelaIncial extends StatelessWidget{
                   ),
                 ),
               ),
-              Divider(
+
+              Divider( //Linha divisória
                 height: 20,
                 thickness: 1,
                 indent: 0,
@@ -352,7 +363,7 @@ class TelaIncial extends StatelessWidget{
                 color: Color.fromARGB(255, 166, 166, 166),
               ),
               
-              Container(
+              Container( //"Botão" informações
                 child: Column(
                   children: <Widget>[
                     Text('Informações',
@@ -364,20 +375,14 @@ class TelaIncial extends StatelessWidget{
                   ],
                 ),
               ),
-              /*Text('Informações',
-                style: TextStyle(
-                  fontWeight: FontWeight.w500,
-                  color: Color.fromARGB(255, 111, 111, 111),
-                ),
-              ),*/
-              Divider(
+  
+              Divider( //Linha divisória
                 height: 20,
                 thickness: 1,
                 indent: 0,
                 endIndent: 0,
                 color: Color.fromARGB(255, 166, 166, 166),
               )
-              
             ],
           ),
         ),
