@@ -243,12 +243,12 @@ class TelaIncial extends StatelessWidget{
 
       //Menu lateral - Drawer
       drawer: Drawer(
-          width: 320, //Largura do Drawer
+          width: 290, //Largura do Drawer
           child: ListView(
             padding: EdgeInsets.zero,
             children: <Widget>[
               SizedBox(
-                height: 190,
+                height: 210, //Define o tamanho do cabeçalho
                 child: DrawerHeader( //Cabeçalho do Drawer
                   decoration: BoxDecoration( //Background do Drawer
                     color: Color(0xFF208C78)
@@ -260,15 +260,26 @@ class TelaIncial extends StatelessWidget{
                     //Ícones e textos
                     children: <Widget>[
                       SizedBox(height: 10,),
-                      Expanded(
-                        child: Icon(Icons.person, size: 60, color: Colors.white,),
+                      Image.asset('imgs/person.png',
+                        height: 70,
                       ),
-                      SizedBox(height: 40,), //Define o espaçamento entre os elementos
+                      /*Expanded(
+                        child: Icon(Icons.person, size: 60, color: Colors.white,),
+                      ),*/
+                      SizedBox(height: 0,), //Define o espaçamento entre os elementos
                       Expanded(
                         child: Text('Paulo Lustosa',
                           style: TextStyle(
                             color: Colors.white,
                             fontWeight: FontWeight.w600
+                          ),
+                        ),
+                      ),
+                      Expanded(
+                        child: Text('24957301',
+                          style: TextStyle(
+                            color: Colors.white,
+                            fontWeight: FontWeight.w400
                           ),
                         ),
                       ),
@@ -287,7 +298,7 @@ class TelaIncial extends StatelessWidget{
               ),
               //Abas
               ListTile( //Dados pessoais
-                leading: Icon(Icons.person_sharp, size: 30,color: Color(0xFF208C78),),
+                leading: Icon(Icons.person_sharp, size: 25,color: Color(0xFF208C78),),
                 title: Text('Dados pessoais',
                   style: TextStyle(
                     fontWeight: FontWeight.w500,
@@ -296,7 +307,7 @@ class TelaIncial extends StatelessWidget{
                 ),
               ),
               ListTile( //Horários
-                leading: Icon(Icons.access_time_rounded, size: 30,color: Color(0xFF208C78),),
+                leading: Icon(Icons.access_time_rounded, size: 25,color: Color(0xFF208C78),),
                 title: Text('Horários',
                   style: TextStyle(
                     fontWeight: FontWeight.w500,
@@ -305,7 +316,7 @@ class TelaIncial extends StatelessWidget{
                 ),
               ),
               ListTile( //Calendário letivo
-                leading: Icon(Icons.calendar_month, size: 30,color: Color(0xFF208C78),),
+                leading: Icon(Icons.calendar_month, size: 25,color: Color(0xFF208C78),),
                 title: Text('Calendário letivo',
                   style: TextStyle(
                     fontWeight: FontWeight.w500,
@@ -314,7 +325,7 @@ class TelaIncial extends StatelessWidget{
                 ),
               ),
               ListTile( //Minhas turmas
-                leading: Icon(Icons.groups, size: 30,color: Color(0xFF208C78),),
+                leading: Icon(Icons.groups, size: 25,color: Color(0xFF208C78),),
                 title: Text('Minhas turmas',
                   style: TextStyle(
                     fontWeight: FontWeight.w500,
@@ -323,7 +334,7 @@ class TelaIncial extends StatelessWidget{
                 ),
               ),
               ListTile( //Frequência
-                leading: Icon(Icons.check, size: 30,color: Color(0xFF208C78),),
+                leading: Icon(Icons.check, size: 25,color: Color(0xFF208C78),),
                 title: Text('Frequência',
                   style: TextStyle(
                     fontWeight: FontWeight.w500,
@@ -332,7 +343,7 @@ class TelaIncial extends StatelessWidget{
                 ),
               ),
               ListTile( //Avaliações e notas
-                leading: Icon(Icons.assessment, size: 30,color: Color(0xFF208C78),),
+                leading: Icon(Icons.assessment, size: 25,color: Color(0xFF208C78),),
                 title: Text('Avaliações e notas',
                   style: TextStyle(
                     fontWeight: FontWeight.w500,
@@ -341,7 +352,7 @@ class TelaIncial extends StatelessWidget{
                 ),
               ),
               ListTile( //Plano de ensino
-                leading: Icon(Icons.edit, size: 30,color: Color(0xFF208C78),),
+                leading: Icon(Icons.edit, size: 25,color: Color(0xFF208C78),),
                 title: Text('Plano de ensino',
                   style: TextStyle(
                     fontWeight: FontWeight.w500,
@@ -350,7 +361,7 @@ class TelaIncial extends StatelessWidget{
                 ),
               ),
               ListTile( //Registro de aula
-                leading: Icon(Icons.list, size: 30,color: Color(0xFF208C78),),
+                leading: Icon(Icons.list, size: 25,color: Color(0xFF208C78),),
                 title: Text('Registro de aula',
                   style: TextStyle(
                     fontWeight: FontWeight.w500,
@@ -359,7 +370,7 @@ class TelaIncial extends StatelessWidget{
                 ),
               ),
               ListTile( //Atividades
-                leading: Icon(Icons.checklist, size: 30,color: Color(0xFF208C78),),
+                leading: Icon(Icons.checklist, size: 25,color: Color(0xFF208C78),),
                 title: Text('Atividades',
                   style: TextStyle(
                     fontWeight: FontWeight.w500,
@@ -368,7 +379,7 @@ class TelaIncial extends StatelessWidget{
                 ),
               ),
               ListTile( //Sair da conta
-                leading: Icon(Icons.exit_to_app, size: 30,color: Color(0xFF208C78),),
+                leading: Icon(Icons.exit_to_app, size: 25,color: Color(0xFF208C78),),
                 title: Text('Sair da conta',
                   style: TextStyle(
                     fontWeight: FontWeight.w500,
@@ -405,7 +416,7 @@ class TelaIncial extends StatelessWidget{
               ),
               SizedBox(height: 15),
               ListTile( //Sicronizar
-                leading: Icon(Icons.rotate_left, size: 30,color: Color(0xFF208C78),),
+                leading: Icon(Icons.rotate_right, size: 25,color: Color(0xFF208C78),),
                 title: Text('Sicronizar',
                   style: TextStyle(
                     fontWeight: FontWeight.w500,
@@ -414,7 +425,7 @@ class TelaIncial extends StatelessWidget{
                 ),
               ),
               ListTile( //Configurações
-                leading: Icon(Icons.settings, size: 30,color: Color(0xFF208C78),),
+                leading: Icon(Icons.settings, size: 25,color: Color(0xFF208C78),),
                 title: Text('Configurações',
                   style: TextStyle(
                     fontWeight: FontWeight.w500,
@@ -423,7 +434,7 @@ class TelaIncial extends StatelessWidget{
                 ),
               ),
               ListTile( //Sobre
-                leading: Icon(Icons.info, size: 30,color: Color(0xFF208C78),),
+                leading: Icon(Icons.info, size: 25,color: Color(0xFF208C78),),
                 title: Text('Sobre',
                   style: TextStyle(
                     fontWeight: FontWeight.w500,
@@ -444,7 +455,7 @@ class TelaIncial extends StatelessWidget{
                 padding: EdgeInsets.only(left: 20),
                 height: 70, //Define o tamanho do rodapé
                 decoration: BoxDecoration(
-                  color: Color.fromARGB(255, 239, 239, 239), //Background do rodapé
+                  color: Color.fromARGB(255, 234, 234, 234), //Background do rodapé
                 ),
                 child: Column(
                   //Deixar os elementos alinhados no início (esquerda)

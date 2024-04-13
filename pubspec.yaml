@@ -60,6 +60,7 @@ flutter:
   assets:
     - imgs/logo.png
     - imgs/professora.jpeg
+    - imgs/person.png
 
 
   # To add assets to your application, add an assets section, like this:
