@@ -344,9 +344,40 @@ class TelaIncial extends StatelessWidget{
                   ),
                 ),
               ),
+              Divider(
+                height: 20,
+                thickness: 1,
+                indent: 0,
+                endIndent: 0,
+                color: Color.fromARGB(255, 166, 166, 166),
+              ),
+              
               Container(
-                child: Text('Informações'),
+                child: Column(
+                  children: <Widget>[
+                    Text('Informações',
+                      style: TextStyle(
+                        fontWeight: FontWeight.w500,
+                        color: Color.fromARGB(255, 111, 111, 111),
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+              /*Text('Informações',
+                style: TextStyle(
+                  fontWeight: FontWeight.w500,
+                  color: Color.fromARGB(255, 111, 111, 111),
+                ),
+              ),*/
+              Divider(
+                height: 20,
+                thickness: 1,
+                indent: 0,
+                endIndent: 0,
+                color: Color.fromARGB(255, 166, 166, 166),
               )
+              
             ],
           ),
         ),
