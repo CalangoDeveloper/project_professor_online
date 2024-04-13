@@ -25,7 +25,7 @@ class TelaLogin extends StatelessWidget{
         padding: EdgeInsets.all(20),
         child: Column(
           children: [
-            SizedBox(height: 110,),
+            SizedBox(height: 90,),
             Image.asset('imgs/logo.png', //Logo Professor Online
               width: 250, //Define o tamanho da imagem
             ),
@@ -67,7 +67,7 @@ class TelaLogin extends StatelessWidget{
                 Expanded(
                   child: Text('Primeiro acesso',
                     style: TextStyle(
-                      fontSize: 16,
+                      fontSize: 14,
                       color: Colors.white 
                     ),
                     textAlign: TextAlign.left, //Alinhar á esquerda
@@ -77,7 +77,7 @@ class TelaLogin extends StatelessWidget{
                 Expanded(
                   child: Text('Recuperar senha',
                     style: TextStyle(
-                      fontSize: 16,
+                      fontSize: 14,
                       color: Colors.white
                     ),
                     textAlign: TextAlign.right, //Alinhar á direita
@@ -243,12 +243,12 @@ class TelaIncial extends StatelessWidget{
 
       //Menu lateral - Drawer
       drawer: Drawer(
-          width: 290, //Largura do Drawer
+          width: 300, //Largura do Drawer
           child: ListView(
             padding: EdgeInsets.zero,
             children: <Widget>[
               SizedBox(
-                height: 210, //Define o tamanho do cabeçalho
+                height: 220, //Define o tamanho do cabeçalho
                 child: DrawerHeader( //Cabeçalho do Drawer
                   decoration: BoxDecoration( //Background do Drawer
                     color: Color(0xFF208C78)
@@ -260,13 +260,13 @@ class TelaIncial extends StatelessWidget{
                     //Ícones e textos
                     children: <Widget>[
                       SizedBox(height: 10,),
-                      Image.asset('imgs/person.png',
+                      Image.asset('imgs/person.png', //Ícone person
                         height: 70,
                       ),
                       /*Expanded(
                         child: Icon(Icons.person, size: 60, color: Colors.white,),
                       ),*/
-                      SizedBox(height: 0,), //Define o espaçamento entre os elementos
+                      SizedBox(height: 8,), //Define o espaçamento entre os elementos
                       Expanded(
                         child: Text('Paulo Lustosa',
                           style: TextStyle(
@@ -288,7 +288,8 @@ class TelaIncial extends StatelessWidget{
                         child: Text('O portal do professor da rede estadual',
                           style: TextStyle(
                             color: Colors.white,
-                            fontWeight: FontWeight.w400
+                            fontWeight: FontWeight.w400,
+                            fontSize: 14
                           ),
                         ),
                       )
