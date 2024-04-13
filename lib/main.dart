@@ -227,7 +227,7 @@ class TelaIncial extends StatelessWidget{
             padding: EdgeInsets.zero,
             children: <Widget>[
               SizedBox(
-                height: 180,
+                height: 190,
                 child: DrawerHeader( //Cabeçalho do Drawer
                   decoration: BoxDecoration( //Background do Drawer
                     color: Color(0xFF208C78)
@@ -238,6 +238,7 @@ class TelaIncial extends StatelessWidget{
                     mainAxisSize: MainAxisSize.min,
                     //Ícones e textos
                     children: <Widget>[
+                      SizedBox(height: 10,),
                       Expanded(
                         child: Icon(Icons.person, size: 60, color: Colors.white,),
                       ),
@@ -255,7 +256,7 @@ class TelaIncial extends StatelessWidget{
                         child: Text('O portal do professor da rede estadual',
                           style: TextStyle(
                             color: Colors.white,
-                            fontWeight: FontWeight.w300
+                            fontWeight: FontWeight.w400
                           ),
                         ),
                       )
@@ -360,28 +361,89 @@ class TelaIncial extends StatelessWidget{
                 thickness: 1,
                 indent: 0,
                 endIndent: 0,
-                color: Color.fromARGB(255, 166, 166, 166),
+                color: Color.fromARGB(255, 189, 189, 189),
               ),
               
               Container( //"Botão" informações
+                padding: EdgeInsets.only(left: 20),
                 child: Column(
+                  //Deixar os elementos alinhados no início (esquerda)
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  mainAxisSize: MainAxisSize.min,
                   children: <Widget>[
                     Text('Informações',
                       style: TextStyle(
                         fontWeight: FontWeight.w500,
                         color: Color.fromARGB(255, 111, 111, 111),
+                        fontSize: 16
                       ),
                     ),
                   ],
                 ),
               ),
+              SizedBox(height: 20),
+              ListTile( //Sicronizar
+                leading: Icon(Icons.rotate_left, size: 30,color: Color(0xFF208C78),),
+                title: Text('Sicronizar',
+                  style: TextStyle(
+                    fontWeight: FontWeight.w500,
+                    color: Color(0xFF208C78)
+                  ),
+                ),
+              ),
+              ListTile( //Configurações
+                leading: Icon(Icons.settings, size: 30,color: Color(0xFF208C78),),
+                title: Text('Configurações',
+                  style: TextStyle(
+                    fontWeight: FontWeight.w500,
+                    color: Color(0xFF208C78)
+                  ),
+                ),
+              ),
+              ListTile( //Sobre
+                leading: Icon(Icons.info, size: 30,color: Color(0xFF208C78),),
+                title: Text('Sobre',
+                  style: TextStyle(
+                    fontWeight: FontWeight.w500,
+                    color: Color(0xFF208C78)
+                  ),
+                ),
+              ),
   
               Divider( //Linha divisória
-                height: 20,
+                height:0,
                 thickness: 1,
                 indent: 0,
                 endIndent: 0,
-                color: Color.fromARGB(255, 166, 166, 166),
+                color: Color.fromARGB(255, 189, 189, 189),
+              ),
+
+              Container( //Rodapé do Drawer (bottom)
+                padding: EdgeInsets.only(left: 20),
+                height: 60, //Define o tamanho do rodapé
+                decoration: BoxDecoration(
+                  color: Color.fromARGB(255, 233, 233, 233), //Background do rodapé
+                ),
+                child: Column(
+                  //Deixar os elementos alinhados no início (esquerda)
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  mainAxisSize: MainAxisSize.min,
+                  children: <Widget>[
+                    SizedBox(height: 10,),
+                    Text('Desenvolvido por:',
+                      style: TextStyle(
+                        color: Color.fromARGB(255, 111, 111, 111),
+                        fontWeight: FontWeight.w600
+                      ),
+                    ),
+                    Text('SEDUC Ceará/ASTIN',
+                      style: TextStyle(
+                        color: Color.fromARGB(255, 111, 111, 111),
+                        fontWeight: FontWeight.w400
+                      )
+                    ,)
+                  ],
+                ),
               )
             ],
           ),
