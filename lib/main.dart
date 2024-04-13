@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 
+//Principal
 void main(){
   runApp(
     const MaterialApp(
@@ -17,46 +18,42 @@ class TelaLogin extends StatelessWidget{
   @override
   Widget build(BuildContext context){
     return Scaffold(
-
-      appBar: AppBar(
-        title: Text('Professor Online - Login'),
-        titleTextStyle: TextStyle(color: Colors.white, fontSize: 24),
-        backgroundColor: Color(0xFF307367),
-        toolbarHeight: 70,
-      ),
-      
       body: Container(
         decoration: BoxDecoration(
           color: Color.fromARGB(255, 117, 179, 167) //Background da tela
         ),
-        padding: EdgeInsets.all(40),
+        padding: EdgeInsets.all(20),
         child: Column(
           children: [
-            SizedBox(height: 25,),
+            SizedBox(height: 110,),
             Image.asset('imgs/logo.png', //Logo Professor Online
-              width: 250,
+              width: 250, //Define o tamanho da imagem
             ),
 
             //TextField (cpf e senha)
             //SizedBox: espaçamento entre os elementos
             SizedBox(height: 50,),
-            widgetTextField_Cpf(),
+            widgetTextField_Cpf(), //CPF
             SizedBox(height: 20),
-            widgetTextField_Senha(),
+            widgetTextField_Senha(), //Senha
             SizedBox(height: 30,),
 
             //Botão login (ao pressionado irá para outra rota (tela))
             ElevatedButton(
               style: ElevatedButton.styleFrom(
-                backgroundColor: Color(0xFF307367),
-                minimumSize: Size(double.infinity, 55),
+                shape: RoundedRectangleBorder( //Deixar o botão com as bordas quadradas
+                  borderRadius: BorderRadius.circular(0)
+                ),
+                backgroundColor: Color(0xFF307367), //Cor do botão
+                minimumSize: Size(double.infinity, 55), //Tamanho do botão
                 padding: EdgeInsets.zero,
               ),
               child: const Text('Login',
-              style: TextStyle(
-                color: Colors.white,
-                fontSize: 18,
-              ),),
+                style: TextStyle(
+                  color: Colors.white,
+                  fontSize: 18,
+                ),
+              ),
               onPressed: (){
                 Navigator.push(context,
                 MaterialPageRoute(builder: (context) => const TelaIncial()),);
@@ -64,22 +61,27 @@ class TelaLogin extends StatelessWidget{
             ),
             SizedBox(height: 10,),
 
-            //"Botões" para primeiro acesso e recuperar senha
+            //"Botões" para primeiro acesso e recuperar senha (os dois na mesma linha)
             Row(
               children: [
                 Expanded(
-                  child: Text('Primeiro acesso', style: TextStyle(
-                    fontSize: 16,
-                    color: Colors.white 
-            ),),
+                  child: Text('Primeiro acesso',
+                    style: TextStyle(
+                      fontSize: 16,
+                      color: Colors.white 
+                    ),
+                    textAlign: TextAlign.left, //Alinhar á esquerda
+                  ),
                 ),
                 SizedBox(width: 110,),
                 Expanded(
-                  flex: 1,
-                  child: Text('Recuperar senha', style: TextStyle(
-                  fontSize: 16,
-                  color: Colors.white
-            ),),
+                  child: Text('Recuperar senha',
+                    style: TextStyle(
+                      fontSize: 16,
+                      color: Colors.white
+                    ),
+                    textAlign: TextAlign.right, //Alinhar á direita
+                  ),
                 ),
               ],
             ),
@@ -102,7 +104,7 @@ widgetTextField_Cpf(){
       enabledBorder: UnderlineInputBorder( //Estilização da linha do input quando estiver sem foco
         borderSide: BorderSide(
           color: Color(0xFF307367) //Cor da linha quando estiver sem foco
-        )
+        ),
       ),
       prefixIcon: Icon(Icons.person, color: Colors.white,), //Ícone
       hintText: 'CPF', //Texto
@@ -110,7 +112,7 @@ widgetTextField_Cpf(){
         fontSize: 18,
         fontWeight: FontWeight.w400,
         color: Colors.white
-      )
+      ),
     ),
   );
 }
@@ -127,7 +129,7 @@ widgetTextField_Senha(){
       enabledBorder: UnderlineInputBorder( //Estilização da linha quando estiver sem foco
         borderSide: BorderSide(
           color: Color(0xFF307367) //Cor da linha quando estiver sem foco
-        )
+        ),
       ),
       prefixIcon: Icon(Icons.lock, color: Colors.white,), //Ícone da esquerda
       suffixIcon: Icon(Icons.remove_red_eye, color: Color(0xFF307367),), //ícone da direita
@@ -136,7 +138,7 @@ widgetTextField_Senha(){
         fontSize: 18,
         fontWeight: FontWeight.w400,
         color: Colors.white
-      )
+      ),
     ),
   );
 }
@@ -147,12 +149,13 @@ class TelaIncial extends StatelessWidget{
   @override
   Widget build(BuildContext context){
     return Scaffold(
-
       appBar: AppBar( //Cabeçalho
-        title: const Text('Professor Online'),
-        titleTextStyle: TextStyle(color: Colors.white, fontSize: 24),
-        backgroundColor: Color(0xFF208C78),
-        toolbarHeight: 70,
+        title: const Text('Professor Online'), //Título
+        titleTextStyle: TextStyle( //Estilização do título
+          color: Colors.white, fontSize: 26
+        ),
+        backgroundColor: Color(0xFF208C78), //Background do AppBar
+        toolbarHeight: 70, //Tamanho do AppBar
         foregroundColor: Colors.white, //Alterar a cor ícone menu do drawer
         actions: <Widget>[
           IconButton( //Ícone de recarregar (canto superior direito da tela)
@@ -189,16 +192,20 @@ class TelaIncial extends StatelessWidget{
               child: Column(
                 children: [ //Textos contidos no container
                   SizedBox(height: 10,),
-                  Text('Professor Online SEDUC', style: TextStyle(
-                    color: Color.fromARGB(255, 94, 94, 94),
-                    fontSize: 20,
-                    fontWeight: FontWeight.bold
-                  ),),
-                  Text('O portal do professor da rede estadual', style: TextStyle(
-                    color: Color.fromARGB(255, 94, 94, 94),
-                    fontSize: 16, 
-                    fontWeight: FontWeight.w400
-                  ),),
+                  Text('Professor Online SEDUC',
+                    style: TextStyle(
+                      color: Color.fromARGB(255, 94, 94, 94),
+                      fontSize: 20,
+                      fontWeight: FontWeight.bold
+                    ),
+                  ),
+                  Text('O portal do professor da rede estadual',
+                    style: TextStyle(
+                      color: Color.fromARGB(255, 94, 94, 94),
+                      fontSize: 16, 
+                      fontWeight: FontWeight.w400
+                    ),
+                  ),
                 ],
               ),
             ),
@@ -211,25 +218,30 @@ class TelaIncial extends StatelessWidget{
                 color: Color(0xFF208C78)
               ),
               alignment: Alignment.center, //Alinhar os elementos ao centro
-              child: Text('Bem vindo, Professor!', style: TextStyle( //Texto contido no segundo container
-                color: Colors.white,
-                fontSize: 16,
-                fontWeight: FontWeight.w400
-              ),),
+              child: Text('Bem vindo, Professor!',
+                style: TextStyle( //Texto contido no segundo container
+                  color: Colors.white,
+                  fontSize: 16,
+                  fontWeight: FontWeight.w400
+                ),
+              ),
             ),
             SizedBox(height: 20,),
             Icon(Icons.inbox_sharp, //Ícon do container principal (inbox)
               size: 120,
               color: Color.fromARGB(255, 94, 94, 94),
             ),
-            Text('Nenhum item encontrado!', style: TextStyle( //Texto contido no container principal
-              color: Color.fromARGB(255, 94, 94, 94),
-              fontSize: 18
-            ),)
+            Text('Nenhum item encontrado!', 
+              style: TextStyle( //Texto contido no container principal
+                color: Color.fromARGB(255, 94, 94, 94),
+                fontSize: 18
+              ),
+            ),
           ],
         ),
       ),
 
+      //Menu lateral - Drawer
       drawer: Drawer(
           width: 320, //Largura do Drawer
           child: ListView(
@@ -373,6 +385,7 @@ class TelaIncial extends StatelessWidget{
                 color: Color.fromARGB(255, 189, 189, 189),
               ),
               SizedBox(height: 10,),
+              
               Container( //"Botão" informações
                 padding: EdgeInsets.only(left: 20),
                 child: Column(
