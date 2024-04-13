@@ -363,7 +363,7 @@ class TelaIncial extends StatelessWidget{
                 endIndent: 0,
                 color: Color.fromARGB(255, 189, 189, 189),
               ),
-              
+              SizedBox(height: 10,),
               Container( //"Botão" informações
                 padding: EdgeInsets.only(left: 20),
                 child: Column(
@@ -381,7 +381,7 @@ class TelaIncial extends StatelessWidget{
                   ],
                 ),
               ),
-              SizedBox(height: 20),
+              SizedBox(height: 15),
               ListTile( //Sicronizar
                 leading: Icon(Icons.rotate_left, size: 30,color: Color(0xFF208C78),),
                 title: Text('Sicronizar',
@@ -416,20 +416,20 @@ class TelaIncial extends StatelessWidget{
                 indent: 0,
                 endIndent: 0,
                 color: Color.fromARGB(255, 189, 189, 189),
-              ),
+              ), 
 
               Container( //Rodapé do Drawer (bottom)
                 padding: EdgeInsets.only(left: 20),
-                height: 60, //Define o tamanho do rodapé
+                height: 70, //Define o tamanho do rodapé
                 decoration: BoxDecoration(
-                  color: Color.fromARGB(255, 233, 233, 233), //Background do rodapé
+                  color: Color.fromARGB(255, 239, 239, 239), //Background do rodapé
                 ),
                 child: Column(
                   //Deixar os elementos alinhados no início (esquerda)
                   crossAxisAlignment: CrossAxisAlignment.start,
                   mainAxisSize: MainAxisSize.min,
                   children: <Widget>[
-                    SizedBox(height: 10,),
+                    SizedBox(height: 20,),
                     Text('Desenvolvido por:',
                       style: TextStyle(
                         color: Color.fromARGB(255, 111, 111, 111),
@@ -440,8 +440,8 @@ class TelaIncial extends StatelessWidget{
                       style: TextStyle(
                         color: Color.fromARGB(255, 111, 111, 111),
                         fontWeight: FontWeight.w400
-                      )
-                    ,)
+                      ),
+                    ),
                   ],
                 ),
               )
