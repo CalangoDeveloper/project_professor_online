@@ -33,7 +33,10 @@ class TelaLogin extends StatelessWidget{
         child: Column(
           children: [
             SizedBox(height: 25,),
-            //Texto "Professor Online" - Logo
+            Image.asset('imgs/logo.png',
+              width: 250,
+            ),
+            /*/Texto "Professor Online" - Logo
             RichText(
               text: TextSpan(
                 children: [
@@ -55,7 +58,7 @@ class TelaLogin extends StatelessWidget{
                   ),
                 ]
               ),
-            ),
+            ),*/
 
             //TextField (cpf e senha)
             //SizedBox: espaçamento entre os elementos
@@ -169,6 +172,14 @@ class TelaIncial extends StatelessWidget{
       body: Container(
         child: Column(
           children: [
+            //Container imagem
+            Container(
+              child: Column(
+                children: <Widget>[
+                  Image.asset('imgs/professora.jpeg')
+                ],
+              ),
+            ),
 
             //Primeiro container
             Container(
@@ -179,14 +190,14 @@ class TelaIncial extends StatelessWidget{
               ),
               child: Column(
                 children: [ //Textos contidos no container
-                  SizedBox(height: 20,),
+                  SizedBox(height: 10,),
                   Text('Professor Online SEDUC', style: TextStyle(
-                    color: Color.fromARGB(255, 73, 73, 73),
-                    fontSize: 18,
+                    color: Color.fromARGB(255, 94, 94, 94),
+                    fontSize: 20,
                     fontWeight: FontWeight.bold
                   ),),
                   Text('O portal do professor da rede estadual', style: TextStyle(
-                    color: Color.fromARGB(255, 73, 73, 73),
+                    color: Color.fromARGB(255, 94, 94, 94),
                     fontSize: 16, 
                     fontWeight: FontWeight.w400
                   ),),
@@ -211,10 +222,10 @@ class TelaIncial extends StatelessWidget{
             SizedBox(height: 20,),
             Icon(Icons.inbox_sharp, //Ícon do container principal (inbox)
               size: 120,
-              color: Color.fromARGB(255, 73, 73, 73)
+              color: Color.fromARGB(255, 94, 94, 94),
             ),
             Text('Nenhum item encontrado!', style: TextStyle( //Texto contido no container principal
-              color: Color.fromARGB(255, 73, 73, 73),
+              color: Color.fromARGB(255, 94, 94, 94),
               fontSize: 18
             ),)
           ],
@@ -429,7 +440,7 @@ class TelaIncial extends StatelessWidget{
                   crossAxisAlignment: CrossAxisAlignment.start,
                   mainAxisSize: MainAxisSize.min,
                   children: <Widget>[
-                    SizedBox(height: 20,),
+                    SizedBox(height: 15,),
                     Text('Desenvolvido por:',
                       style: TextStyle(
                         color: Color.fromARGB(255, 111, 111, 111),
