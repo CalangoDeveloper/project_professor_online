@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
 
 void main(){
   runApp(
@@ -87,8 +88,9 @@ class TelaLogin extends StatelessWidget{
                     color: Colors.white 
             ),),
                 ),
-                SizedBox(width: 60,),
+                SizedBox(width: 110,),
                 Expanded(
+                  flex: 1,
                   child: Text('Recuperar senha', style: TextStyle(
                   fontSize: 16,
                   color: Colors.white
@@ -210,57 +212,140 @@ class TelaIncial extends StatelessWidget{
       ),
 
       drawer: Drawer(
-          width: 350,
+          width: 320, //Largura do Drawer
           child: ListView(
             padding: EdgeInsets.zero,
             children: <Widget>[
               SizedBox(
-                height: 200,
-                child: DrawerHeader(
-                  decoration: BoxDecoration(
+                height: 180,
+                child: DrawerHeader( //Cabeçalho do Drawer
+                  decoration: BoxDecoration( //Background do Drawer
                     color: Color(0xFF208C78)
                   ),
-                  child: Container(
-                    alignment: Alignment.centerLeft,
-                    child: Row(
-                      children: [
-                        
-                        SizedBox(
-                          width: 200,
-                          child: DrawerHeader(
-                            child: Container(
-                              child: Column(
-                                children: [
-                                  Icon(Icons.person, size: 40, color: Colors.white,),
-                                  SizedBox(height: 8,),
-                                  Text('O portal do professor da rede estadual',
-                                    style: TextStyle(
-                                      color: Colors.white,
-                                      fontSize: 14
-                                    ),
-                                  )
-                                ],
-                              ),
-                            ),
+                  child: Column(
+                    //Deixar os elementos alinhados no início (esquerda)
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    mainAxisSize: MainAxisSize.min,
+                    //Ícones e textos
+                    children: <Widget>[
+                      Expanded(
+                        child: Icon(Icons.person, size: 60, color: Colors.white,),
+                      ),
+                      SizedBox(height: 40,), //Define o espaçamento entre os elementos
+                      Expanded(
+                        child: Text('Paulo Lustosa',
+                          style: TextStyle(
+                            color: Colors.white,
+                            fontWeight: FontWeight.w600
                           ),
-                        )
-                      ],
-                    ),
-                  )
+                        ),
+                      ),
+                      SizedBox(height: 15,),
+                      Expanded(
+                        child: Text('O portal do professor da rede estadual',
+                          style: TextStyle(
+                            color: Colors.white,
+                            fontWeight: FontWeight.w300
+                          ),
+                        ),
+                      )
+                    ],
+                  ),
                 ),
               ),
-              ListTile(
-                leading: Icon(Icons.map),
-                title: Text(''),
-                textColor: Colors.black,
+              //Ícones
+              ListTile( //Dados pessoais
+                leading: Icon(Icons.person_sharp, size: 30,color: Color(0xFF208C78),),
+                title: Text('Dados pessoais',
+                  style: TextStyle(
+                    fontWeight: FontWeight.w500,
+                    color: Color(0xFF208C78)
+                  ),
+                ),
               ),
-              ListTile(
-                leading: Icon(Icons.send),
-                title: Text('Mensagens'),
+              ListTile( //Horários
+                leading: Icon(Icons.access_time_rounded, size: 30,color: Color(0xFF208C78),),
+                title: Text('Horários',
+                  style: TextStyle(
+                    fontWeight: FontWeight.w500,
+                    color: Color(0xFF208C78)
+                  ),
+                ),
               ),
-              ListTile(
-                leading: Icon(Icons.notifications),
-                title: Text('Notificações'),
+              ListTile( //Calendário letivo
+                leading: Icon(Icons.calendar_month, size: 30,color: Color(0xFF208C78),),
+                title: Text('Calendário letivo',
+                  style: TextStyle(
+                    fontWeight: FontWeight.w500,
+                    color: Color(0xFF208C78)
+                  ),
+                ),
+              ),
+              ListTile( //Minhas turmas
+                leading: Icon(Icons.groups, size: 30,color: Color(0xFF208C78),),
+                title: Text('Minhas turmas',
+                  style: TextStyle(
+                    fontWeight: FontWeight.w500,
+                    color: Color(0xFF208C78)
+                  ),
+                ),
+              ),
+              ListTile( //Frequência
+                leading: Icon(Icons.check, size: 30,color: Color(0xFF208C78),),
+                title: Text('Frequência',
+                  style: TextStyle(
+                    fontWeight: FontWeight.w500,
+                    color: Color(0xFF208C78)
+                  ),
+                ),
+              ),
+              ListTile( //Avaliações e notas
+                leading: Icon(Icons.assessment, size: 30,color: Color(0xFF208C78),),
+                title: Text('Avaliações e notas',
+                  style: TextStyle(
+                    fontWeight: FontWeight.w500,
+                    color: Color(0xFF208C78)
+                  ),
+                ),
+              ),
+              ListTile( //Plano de ensino
+                leading: Icon(Icons.edit, size: 30,color: Color(0xFF208C78),),
+                title: Text('Plano de ensino',
+                  style: TextStyle(
+                    fontWeight: FontWeight.w500,
+                    color: Color(0xFF208C78)
+                  ),
+                ),
+              ),
+              ListTile( //Registro de aula
+                leading: Icon(Icons.list, size: 30,color: Color(0xFF208C78),),
+                title: Text('Registro de aula',
+                  style: TextStyle(
+                    fontWeight: FontWeight.w500,
+                    color: Color(0xFF208C78)
+                  ),
+                ),
+              ),
+              ListTile( //Atividades
+                leading: Icon(Icons.checklist, size: 30,color: Color(0xFF208C78),),
+                title: Text('Atividades',
+                  style: TextStyle(
+                    fontWeight: FontWeight.w500,
+                    color: Color(0xFF208C78)
+                  ),
+                ),
+              ),
+              ListTile( //Sair da conta
+                leading: Icon(Icons.exit_to_app, size: 30,color: Color(0xFF208C78),),
+                title: Text('Sair da conta',
+                  style: TextStyle(
+                    fontWeight: FontWeight.w500,
+                    color: Color(0xFF208C78)
+                  ),
+                ),
+              ),
+              Container(
+                child: Text('Informações'),
               )
             ],
           ),
